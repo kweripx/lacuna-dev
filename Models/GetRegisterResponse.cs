@@ -13,11 +13,11 @@ public class GetRegisterResponse {
     }
 
     public override string ToString() {
-        var stringResponse = $"GetRegisterResponse{{Code: {Code} }}";
+        var stringResponse = $"GetRegisterResponse{{Code: {Code}";
         
         if (Message != null) {
             stringResponse += $"Message: {Message}";
         }
-        return stringResponse;
+        return stringResponse + "}";
     }
 }

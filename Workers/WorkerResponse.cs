@@ -3,13 +3,13 @@ using System.Text.Json.Serialization;
 namespace LacunaAdmission.Workers;
 
 public class WorkerResponse {
-    public WorkerOperation WorkerOperation { get;}
+    public Job Job { get;}
     public string Code { get;} 
     public string? Message { get;}
 
     [JsonConstructor]
-    public WorkerResponse(WorkerOperation operation, string code, string? message) {
-        WorkerOperation = operation;
+    public WorkerResponse(Job job, string code, string? message) {
+        Job = job;
         Code = code;
         Message = message;
     }

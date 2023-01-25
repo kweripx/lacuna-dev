@@ -1,13 +1,13 @@
 namespace LacunaAdmission.Workers;
 
-public class WorkerOperation {
+public class Job {
     public string Id { get;}
     public string Type {get; }
     public string? Strand { get; }
     public string? StrandEncoded { get;}
     public string? GeneEncoded { get;}
 
-    public WorkerOperation(string id, string type, string? strand, string? strandEncoded, string? geneEncoded) {
+    public Job(string id, string type, string? strand, string? strandEncoded, string? geneEncoded) {
         Id = id;
         Type = type;
         Strand = strand;
@@ -62,13 +62,13 @@ public class WorkerOperation {
         'C' => 0b01,
         'G' => 0b10,
         'T' => 0b11,
-        _ => throw new Exception($"Isnt possible to encode {code}")
+        _ => throw new Exception($"Wasnt possible to encode code {code}")
     };
     private static char DecodeCode(int y) => y switch {
         0b00 => 'A',
         0b01 => 'C',
         0b10 => 'G',
         0b11 => 'T',
-        _ => throw new Exception("Isnt possible to decode code: " + Convert.ToString(y, 2).PadLeft(8, '0'))
+        _ => throw new Exception("Wasnt possible to decode code: " + Convert.ToString(y, 2).PadLeft(8, '0'))
     };
 }
